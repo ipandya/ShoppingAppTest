@@ -19,7 +19,6 @@ namespace ShoppingAppTest.WebAPI.Controllers
         {
             return View(db.ProductMasters.ToList());
         }
-
         // GET: ProductMastersView/Details/5
         public ActionResult Details(decimal id)
         {
