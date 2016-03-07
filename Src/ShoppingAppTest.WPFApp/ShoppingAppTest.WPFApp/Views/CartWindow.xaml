@@ -33,10 +33,42 @@
 
         </DataGrid>
 
-        <TextBlock Margin="12" Grid.Row="2" FontSize="28" Foreground="Gray">
-            <Run Text="Items in Cart"/>
-            <Run Text="{Binding TotalAmountForCart, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-        </TextBlock>
+        <Grid Grid.Row="2" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Margin="12" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="VAT @ 20 %" FontSize="18" Foreground="Gray"/>
+                <TextBlock Grid.Column="1" Text="{Binding TotalAmountForCartWithoutVAT, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Foreground="Gray" HorizontalAlignment="Right"/>
+            </Grid>
+
+
+            <Grid Margin="12" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="VAT @ 20 %" FontSize="18" Foreground="Gray"/>
+                <TextBlock Grid.Column="1" Text="{Binding TotalVATOnAmountForCart, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Foreground="Gray" HorizontalAlignment="Right"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="12,0,12,12" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Total" FontSize="18" Foreground="Gray"/>
+                <TextBlock Grid.Column="1"  Text="{Binding TotalAmountForCart, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontSize="18" Foreground="Gray" HorizontalAlignment="Right"/>
+            </Grid>
+        </Grid>
+
 
 
     </Grid>
