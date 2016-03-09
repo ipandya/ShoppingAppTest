@@ -14,7 +14,7 @@ namespace ShoppingAppTest.Commons
         /// <summary>
         /// Save Product
         /// </summary>
-        //public const string POST_PRODUCTS = BASE_URL + "ProductMasters";
+        public const string POST_CUSTOMER = BASE_URL + "CustomerMasters";
 
         /// <summary>
         /// Append ID at the end
